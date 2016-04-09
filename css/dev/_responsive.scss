@@ -1,0 +1,71 @@
+// Template SCSS
+
+// SCSS for Regular Devices ( 1024px < Display < 1600 px)
+
+// SCSS for Retina Displays
+//
+@media screen 
+  and (-webkit-min-device-pixel-ratio: 2)
+    and (min-resolution: 192dpi) {
+      
+        
+}
+
+// SCSS for Large Devices
+//
+@media screen and (min-width: 1600px) {
+
+    
+}
+
+// SCSS for Small Devices and Tablets
+//
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    
+}
+
+// SCSS for Tablets ONLY in Landscape Orientation
+//
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+    and (orientation : landscape) {  
+
+
+}
+
+// SCSS for Tablets ONLY in Portrait Orientation
+//
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+    and (orientation : portrait) {  
+
+
+}
+
+// SCSS for Smartphones and Extra Small Devices
+//
+@media screen and (max-width: 768px) {
+
+    
+}
+
+// SCSS only for Smartphones ONLY in Landscape Orientation
+//
+@media only screen 
+and (max-device-width : 768px) 
+    and (orientation : landscape) {  
+
+
+}
+
+// SCSS for Smartphones ONLY in Portrait Orientation
+//
+@media only screen 
+and (max-device-width : 768px) 
+    and (orientation : portrait) {  
+
+
+}

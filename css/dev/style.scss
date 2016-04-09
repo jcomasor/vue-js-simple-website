@@ -1,0 +1,29 @@
+// style.scss
+
+//
+// AUTHOR
+//
+// Developed by Christian MacMillan for VASAVA in 2016
+// https://github.com/cmacmillanmarin
+// christian@vasava.es
+//
+
+//
+// Declarations and functions
+//
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "keyframes";
+
+//
+// Styles
+//
+@import "global"; 
+@import "loader";
+ 
+@import "components/transition";
+@import "components/header";
+@import "components/home";
+@import "components/about";
+@import "components/contact";
