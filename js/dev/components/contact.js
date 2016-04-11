@@ -59,16 +59,18 @@ var contact = Vue.extend({
     methods : {
         
         animationIn : function (e) {
+            
+            r.setAnimationInDuration(500)
                         
             TweenMax.to('#contact', 0.5, { opacity : 1 })
             TweenMax.from('#contact', 0.5, { y : 100 })
-            
+                        
             events.removeListener(events.events.animationIn, this.animationIn)
             
         },
         
         animationOut : function (e) {
-                     
+            
             r.setAnimationOutDuration(5000)
             
             TweenMax.to('#contact', 5, { y : 100, left : 500, opacity: 0, scale: 0.4 })

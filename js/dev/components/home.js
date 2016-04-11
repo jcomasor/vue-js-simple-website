@@ -59,7 +59,9 @@ var home = Vue.extend({
     methods : {
         
         animationIn : function (e) {
-                        
+            
+            r.setAnimationInDuration(500)
+            
             TweenMax.to('#home', 0.5, { opacity : 1 })
             TweenMax.from('#home', 0.5, { y : 100 })
             

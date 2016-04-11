@@ -50,7 +50,7 @@ var about = Vue.extend({
     template: template,
     
     ready: function () {
-        
+                
         events.on(events.events.animationIn, this.animationIn)
         events.on(events.events.animationOut, this.animationOut)
         
@@ -59,7 +59,9 @@ var about = Vue.extend({
     methods : {
         
         animationIn : function (e) {
-                        
+            
+            r.setAnimationInDuration(500)
+            
             TweenMax.to('#about', 0.5, { opacity : 1 })
             TweenMax.from('#about', 0.5, { y : 100 })
             
@@ -67,11 +69,11 @@ var about = Vue.extend({
             
         },
         
-        animationOut : function (e) {
-                     
-            r.setAnimationOutDuration(500)
+        animationOut : function (e) {         
             
-            TweenMax.to('#about', 0.5, { y : 100, opacity: 0 })
+            r.setAnimationOutDuration(1000)
+            
+            TweenMax.to('#about', 1, { y : 100, opacity: 0 })
             
             events.removeListener(events.events.animationOut, this.animationOut)
             

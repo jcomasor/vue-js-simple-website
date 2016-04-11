@@ -40,6 +40,7 @@ var events = require('./events')
 var router
 var section
 var animationOutDuration
+var animationInDuration
 
 //
 //  END VARIABLES
@@ -50,7 +51,8 @@ var animationOutDuration
 //
 
 Vue.use(VueRouter)
-router = new VueRouter({
+
+router = new VueRouter({    
     hashbang: false,
     history: true,
     transitionOnLoad: true
@@ -63,14 +65,18 @@ Vue.transition('transition', {
         setTimeout( function () {
             
             events.emit(events.events.animationIn)
-
+            
+            setTimeout( function () { $('body').css({ 'pointer-events' : 'auto' }) }, animationInDuration)
+            
         }, animationOutDuration)    
       
   
     },
   
     leave: function (el,done) {
-                
+        
+        $('body').css({ 'pointer-events' : 'none' })
+
         events.emit(events.events.animationOut)
         
         setTimeout( function () { done() }, animationOutDuration)
@@ -89,7 +95,8 @@ Vue.transition('transition', {
 //
 module.exports = {
 
-    getRouter : function () { return router; },
-    setAnimationOutDuration : function (time) { animationOutDuration = time }
+    getRouter : function () { return router },
+    setAnimationOutDuration : function (time) { animationOutDuration = time },
+    setAnimationInDuration : function (time) { animationInDuration = time }
 
 }
