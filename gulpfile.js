@@ -3,10 +3,7 @@
 //
 // AUTHOR
 //
-// Developed by Christian MacMillan for VASAVA in 2016
-// https://github.com/cmacmillanmarin
-// hello@christian-macmillan.com
-// http://christian-macmillan.com
+// Developed by VASAVA in 2016
 //
 
 //
@@ -53,7 +50,11 @@ gulp.task('browserify', function() {
             appliesTo: { includeExtensions: ['.html','.php'] },
             minify: true
         })
-        .bundle();
+
+        .bundle().on('error', function (err) {
+            console.log(err.toString());
+            this.emit("end");
+        });
 
     bundleStream
         .pipe(source('main.js'))
@@ -62,6 +63,18 @@ gulp.task('browserify', function() {
         .pipe(reload({ stream:true }));
     
 })
+
+// All JS's files to one MINIFIED bundle dev file
+//
+gulp.task('uglyme', function () {
+
+    gulp.src('./js/bundle.js')
+        .pipe(hash())
+        .pipe(streamify(uglify()))
+        .pipe(gulp.dest('./js'));
+
+});
+
 
 // Php files live reload
 //

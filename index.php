@@ -19,7 +19,8 @@
     <body>
 
         <div id="app">
-            <?php include 'header.php'; ?>
+            
+            <header-component></header-component>
             
             <router-view transition="transition"></router-view>
                     

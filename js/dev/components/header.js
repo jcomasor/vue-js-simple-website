@@ -4,9 +4,7 @@
 //
 // AUTHOR
 //
-// Developed by Christian MacMillan for VASAVA in 2016
-// https://github.com/cmacmillanmarin
-// christian@vasava.es
+// Developed by VASAVA in 2016
 //
 
 //
@@ -24,55 +22,30 @@ var Vue = require('vue')
 var events = require("../events");
 
 //
+//  END REQUIRES
+//
+
+//
 // VARIABLES
 //
 
-var barIn = false
+//
+//  END VARIABLES
+//
 
 //
 // JS
 //
 
-var header = new Vue({
-    
-    el: 'header',
+// Component Template
+//
+var template = require("../../../header.html")
 
-    methods: {
-        
-        showSearchBar: function () {
-            
-            if (!barIn) {
-                
-                $('header .navigation .line, .global, footer')
-                    .css('display','none')
-            
-                $('.search .bar, .searchContainer')
-                    .css('display','block')
-                
-                barIn = true
-                
-            } else {
-                
-                $('header .navigation .line, .global, footer')
-                    .css('display','block')
-                
-                $('.search .bar, .searchContainer')
-                    .css('display','none')
-                
-                barIn = false
-                
-            }            
-            
-        },
-        
-        search: function () {
-            
-            var val = $('.search .bar input').val()
-            events.emit(events.events.inputSearchHeader,{ val: val })
-            
-        }
-        
-    },
+// Component Object
+//
+var header = Vue.extend({
+    
+    template : template,
     
 })
 

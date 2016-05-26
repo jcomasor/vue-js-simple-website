@@ -1,12 +1,14 @@
+
 <?php 
 
     $lang = $_REQUEST['l'];
-    $url = "./";
     
     if (!isset($lang)) { $lang = "en"; }
 
+    $actual_link = $_SERVER[REQUEST_URI];
+
     $url = "http://localhost:3000/";
-    $titulo = "Template";
+    $titulo = "Chaos Fashion";
 
     $style = 'style.css';
     $js = 'bundle.js';

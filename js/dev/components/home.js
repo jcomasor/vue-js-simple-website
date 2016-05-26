@@ -4,9 +4,7 @@
 //
 // AUTHOR
 //
-// Developed by Christian MacMillan in 2016 at VASAVA 
-// https://github.com/cmacmillanmarin
-// christian@vasava.es
+// Developed by VASAVA in 2016
 //
 
 //
@@ -41,13 +39,13 @@ var router
 
 // Component Template
 //
-var template = require("../../../home.php")
+var template = require("../../../home.html")
 
 // Component Object
 //
 var home = Vue.extend({
     
-    template: template,
+    template : template,
     
     ready: function () {
         
