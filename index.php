@@ -1,11 +1,16 @@
+<?php 
+
+    $lang = "es";
+    $url = "http://localhost:3000";          // Absolute Path  
+
+?>
 <!DOCTYPE html>
-<?php include 'data.php'; ?>
 <html lang="<?php echo $lang; ?>">
 
     <head>
 
         <!-- Meta Title  -->
-        <title><?php echo $titulo; ?></title>
+        <title>Vue js simple website</title>
         
         <!-- Meta Content-Type  -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,7 +22,7 @@
         <meta name="creation_Date" content="09-04-2016" />
           
         <!-- Meta Description  -->
-        <meta name="description" content="" />
+        <meta name="description" content="Vue js + Gulp simple website with routes and transitions" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         
         <!-- Favicon  -->
@@ -57,7 +62,7 @@
         <meta property="fb:admins" content="xxx" />
         
         <!-- Own CSS  -->
-        <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>build/<?php echo $style; ?>" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>build/style.css" />
 
         <!--[if IE]>
             <script type="text/javascript">
@@ -78,7 +83,7 @@
         </div>
 
         <!-- Own JS  -->
-        <script src="<?php echo $url; ?>build/<?php echo $js; ?>"></script>
+        <script src="<?php echo $url; ?>build/bundle.js"></script>
 
     </body>
 

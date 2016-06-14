@@ -1,3 +1,3 @@
-# empty-project 
+# Vue js simple website 
 
-Vue js basic website with routes and transitions
+Vue js + Gulp basic website with routes and transitions
