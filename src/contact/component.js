@@ -17,7 +17,7 @@ var Vue = require("vue")
 var VueRouter = require("vue-router")
 var r = require("../routes")
 
-var events = require('../events')
+var events = require('../utilities/events')
 
 //
 // END REQUIRES
@@ -39,7 +39,7 @@ var router
 
 // Component Template
 //
-var template = require("../../../contact.html")
+var template = require("./template.html") 
 
 // Component Object
 //

@@ -20,12 +20,12 @@ var TweenMax = require('gsap')
 var Vue = require('vue')
 var VueRouter = require('vue-router')
 
-var header = require('./components/header')
+var header = require('./header/component')
 
 //
 //  Aux js
-var responsive = require('./responsive')
-var events = require('./events')
+var responsive = require('./utilities/responsive')
+var events = require('./utilities/events')
 
 //
 // END REQUIRES

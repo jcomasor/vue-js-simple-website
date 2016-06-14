@@ -20,11 +20,12 @@
 // Styles
 //
 @import "normalize"; 
+@import "transition"; 
 @import "global"; 
 @import "loader";
- 
-@import "components/transition"; 
-@import "components/header";
-@import "components/home";
-@import "components/about";
-@import "components/contact";
+
+@import "../src/header/style"; 
+
+@import "../src/home/style"; 
+@import "../src/about/style"; 
+@import "../src/contact/style";

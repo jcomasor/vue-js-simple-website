@@ -8,7 +8,7 @@
     $actual_link = $_SERVER[REQUEST_URI];
 
     $url = "http://localhost:3000/";
-    $titulo = "Chaos Fashion";
+    $titulo = "Vue js simple website";
 
     $style = 'style.css';
     $js = 'bundle.js';

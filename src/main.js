@@ -25,14 +25,16 @@ var routes = require('./routes')
 
 //
 //  Vue js components
-var header = require('./components/header')
-var home = require('./components/home')
-var about = require('./components/about')
-var contact = require('./components/contact')
+var header = require('./header/component')
+var home = require('./home/component')
+var about = require('./about/component')
+var contact = require('./contact/component')
 
 //
 //  Aux js 
-var scroll = require('./scroll')
+var scroll = require('./utilities/scroll')
+var responsive = require('./utilities/responsive')
+var scroll = require('./utilities/events')
 
 //
 // END REQUIRES

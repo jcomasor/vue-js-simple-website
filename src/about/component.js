@@ -1,5 +1,5 @@
 //
-// JS MODULE: home.js
+// JS MODULE: about.js
 
 //
 // AUTHOR
@@ -17,7 +17,7 @@ var Vue = require("vue")
 var VueRouter = require("vue-router")
 var r = require("../routes")
 
-var events = require('../events')
+var events = require('../utilities/events')
 
 //
 // END REQUIRES
@@ -39,16 +39,16 @@ var router
 
 // Component Template
 //
-var template = require("../../../home.html")
+var template = require("./template.html") 
 
 // Component Object
 //
-var home = Vue.extend({
+var about = Vue.extend({
     
-    template : template,
+    template: template,
     
     ready: function () {
-        
+                
         events.on(events.events.animationIn, this.animationIn)
         events.on(events.events.animationOut, this.animationOut)
         
@@ -60,18 +60,18 @@ var home = Vue.extend({
             
             r.setAnimationInDuration(500)
             
-            TweenMax.to('#home', 0.5, { opacity : 1 })
-            TweenMax.from('#home', 0.5, { y : 100 })
+            TweenMax.to('#about', 0.5, { opacity : 1 })
+            TweenMax.from('#about', 0.5, { y : 100 })
             
             events.removeListener(events.events.animationIn, this.animationIn)
             
         },
         
-        animationOut : function (e) {
-                     
-            r.setAnimationOutDuration(500)
+        animationOut : function (e) {         
             
-            TweenMax.to('#home', 0.5, { y : 100, opacity: 0 })
+            r.setAnimationOutDuration(1000)
+            
+            TweenMax.to('#about', 1, { y : 100, opacity: 0 })
             
             events.removeListener(events.events.animationOut, this.animationOut)
             
@@ -79,7 +79,6 @@ var home = Vue.extend({
         
     }
 
-    
 })
 
 //  Component Route
@@ -88,9 +87,11 @@ router = r.getRouter()
 
 router.map({
     
-    '/': {
-        component: home,
-        name: 'home'
+    '/about/': {
+        
+        component: about,
+        'name' : 'about'
+    
     }
 
 })

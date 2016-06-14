@@ -23,6 +23,7 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     rename = require('gulp-rename'),
     stringify = require('stringify'),
+    vueify = require('vueify'),
     concat = require('gulp-concat');
 
 //
@@ -33,10 +34,10 @@ var gulp = require('gulp'),
 //
 gulp.task('styles', function () {
 
-    return sass(['css/dev/**/*.css','css/dev/**/*.scss'], { style: 'compressed' })
+    return sass(['css/*.scss'], { style: 'compressed' })
         .pipe(concat('style.css'))
         .on('error', sass.logError)
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest('build'))
         .pipe(reload({ stream:true }));
 
 });
@@ -45,12 +46,12 @@ gulp.task('styles', function () {
 //
 gulp.task('browserify', function() {
     
-    var bundleStream = browserify('./js/dev/main.js')
+    var bundleStream = browserify('./src/main.js')
+        .transform(vueify)
         .transform(stringify, {
             appliesTo: { includeExtensions: ['.html','.php'] },
             minify: true
         })
-
         .bundle().on('error', function (err) {
             console.log(err.toString());
             this.emit("end");
@@ -59,7 +60,7 @@ gulp.task('browserify', function() {
     bundleStream
         .pipe(source('main.js'))
         .pipe(rename('bundle.js'))
-        .pipe(gulp.dest('./js'))
+        .pipe(gulp.dest('./build'))
         .pipe(reload({ stream:true }));
     
 })
@@ -96,9 +97,8 @@ gulp.task('connect-sync', function() {
         });
     });
 
-    gulp.watch('**/*.php', ['browserify']);
-    gulp.watch('js/dev/**/*.js', ['browserify']);
-    gulp.watch('css/dev/**/*.scss', ['styles']);
+    gulp.watch(['**/*.php','**/*.html','src/**/*.js'], ['browserify']);
+    gulp.watch(['css/**/*.scss','src/**/*.scss'], ['styles']);
 
 });
 

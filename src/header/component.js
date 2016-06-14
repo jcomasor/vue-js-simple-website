@@ -19,7 +19,7 @@ var Vue = require('vue')
 //
 //  Aux js
 
-var events = require("../events");
+var events = require('../utilities/events')
 
 //
 //  END REQUIRES
@@ -39,7 +39,7 @@ var events = require("../events");
 
 // Component Template
 //
-var template = require("../../../header.html")
+var template = require("./template.html") 
 
 // Component Object
 //
