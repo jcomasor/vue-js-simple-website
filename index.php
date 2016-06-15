@@ -1,7 +1,7 @@
 <?php 
 
     $lang = "es";
-    $url = "http://localhost:3000";          // Absolute Path  
+    $url = "http://localhost:3000/";          // Absolute Path  
 
 ?>
 <!DOCTYPE html>

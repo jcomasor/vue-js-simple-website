@@ -4,7 +4,9 @@
 //
 // AUTHOR
 //
-// Developed by VASAVA in 2016
+// Developed by Christian MacMillan in 2016
+// https://github.com/cmacmillanmarin
+// hello@christian-macmillan.com
 //
 
 //
