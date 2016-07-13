@@ -14,29 +14,30 @@
 //
 
 //
-//  Libraries
-global.$ = require("jquery")
-var TweenMax = require("gsap")
-var _ = require("underscore")
+//  Global Libraries
+
+global.$ = require('jquery')
+var TweenMax = require('gsap')
 
 //
 //  Vue js
+
 var Vue = require('vue')
-var VueRouter = require('vue-router')
-var routes = require('./routes')
+var r= require('./routes')
 
 //
 //  Vue js components
-var header = require('./header/component')
+
+var header = require('./global/header/component')
 var home = require('./home/component')
 var about = require('./about/component')
 var contact = require('./contact/component')
 
 //
 //  Aux js 
-var scroll = require('./utilities/scroll')
-var responsive = require('./utilities/responsive')
-var scroll = require('./utilities/events')
+
+var responsive = require('./global/utilities/responsive')
+var events = require('./global/utilities/events')
 
 //
 // END REQUIRES
@@ -56,7 +57,7 @@ var App = Vue.extend({
     
 })
 
-var router = routes.getRouter()
+var router = r.getRouter()
 
 //
 //  END VARIABLES

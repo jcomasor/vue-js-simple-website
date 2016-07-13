@@ -14,20 +14,15 @@
 //
 
 //
-//  Libraries
-global.$ = require('jquery')
-var TweenMax = require('gsap')
-//
 //  Vue js
+
 var Vue = require('vue')
 var VueRouter = require('vue-router')
 
-var header = require('./header/component')
-
 //
 //  Aux js
-var responsive = require('./utilities/responsive')
-var events = require('./utilities/events')
+
+var events = require('./global/utilities/events')
 
 //
 // END REQUIRES
@@ -38,7 +33,6 @@ var events = require('./utilities/events')
 //
 
 var router
-var section
 var animationOutDuration
 var animationInDuration
 
@@ -69,7 +63,6 @@ Vue.transition('transition', {
             setTimeout( function () { $('body').css({ 'pointer-events' : 'auto' }) }, animationInDuration)
             
         }, animationOutDuration)    
-      
   
     },
   
@@ -80,7 +73,6 @@ Vue.transition('transition', {
         events.emit(events.events.animationOut)
         
         setTimeout( function () { done() }, animationOutDuration)
-        
   
     }
 
@@ -93,6 +85,7 @@ Vue.transition('transition', {
 //
 //  EXPORTS
 //
+
 module.exports = {
 
     getRouter : function () { return router },

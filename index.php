@@ -1,6 +1,6 @@
 <?php 
 
-    $lang = "es";
+    $lang = "en";
     $url = "http://localhost:3000/";          // Absolute Path  
 
 ?>
@@ -46,20 +46,20 @@
         <!-- Meta Social Sharing  -->
         <!-- Twitter Card data -->
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@xxx">
-        <meta name="twitter:title" content="xxx">
-        <meta name="twitter:description" content="xxx">
-        <meta name="twitter:creator" content="@xxx">
+        <meta name="twitter:site" content="@account">
+        <meta name="twitter:title" content="Title">
+        <meta name="twitter:description" content="Description">
+        <meta name="twitter:creator" content="@cmacmillanmarin">
         <meta name="twitter:image" content="<?php echo $url; ?>img/share/share_twitter.jpg">
 
         <!-- Open Graph (Fb, G+, Pin..) data -->
-        <meta property="og:title" content="xxx" />
+        <meta property="og:title" content="Title" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="http://www.xxx.com/" />
+        <meta property="og:url" content="<?php echo $url; ?>" />
         <meta property="og:image" content="<?php echo $url; ?>img/share/share_facebook.jpg" />
-        <meta property="og:description" content="xxx" />
-        <meta property="og:site_name" content="xxx" /> 
-        <meta property="fb:admins" content="xxx" />
+        <meta property="og:description" content="Description" />
+        <meta property="og:site_name" content="Sitename" /> 
+        <meta property="fb:admins" content="0000000000" />
         
         <!-- Own CSS  -->
         <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>build/style.css" />

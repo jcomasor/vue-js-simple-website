@@ -67,26 +67,6 @@ gulp.task('browserify', function() {
     
 })
 
-// All JS's files to one MINIFIED bundle dev file
-//
-gulp.task('uglyme', function () {
-
-    gulp.src('./build/bundle.js')
-        .pipe(hash())
-        .pipe(streamify(uglify()))
-        .pipe(gulp.dest('./build'));
-
-});
-
-
-// Php files live reload
-//
-gulp.task('phps', function () {
-
-    gulp.src('**/*.php')
-        .pipe(reload({ stream:true }));
-        
-});
 
 // Create the server connection and add the watches 
 //
@@ -112,12 +92,6 @@ gulp.task('connect-sync', function() {
 // GENERAL EXE TASKS
 //
 
-// Build Task
-//
-gulp.task('build', [ 'cleanProd' , 'buildProd' ]);
-
-// Default Task
-//
 gulp.task('default', [ 'browserify' , 'connect-sync' ]);
 
 //

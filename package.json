@@ -4,12 +4,9 @@
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
-    "google-maps": "^3.2.1",
     "gsap": "^1.18.2",
     "jquery": "^2.2.0",
-    "jquery-mousewheel": "^3.1.13",
     "raf": "^3.2.0",
-    "three": "^0.77.1",
     "underscore": "^1.8.3",
     "vue": "^1.0.17",
     "vue-router": "^0.7.11"
@@ -29,8 +26,6 @@
     "gulp-ruby-sass": "^2.0.6",
     "gulp-streamify": "^1.0.2",
     "gulp-uglify": "^1.5.2",
-    "imagesloaded": "^4.1.0",
-    "jquery-mousewheel": "^3.1.13",
     "stringify": "^5.1.0",
     "vinyl-source-stream": "^1.1.0",
     "vueify": "^8.5.4"
@@ -45,10 +40,6 @@
     ]
   },
   "browserify-shim": {},
-  "repository": {
-    "type": "git",
-    "url": "http://192.168.1.108/Bonobo.Git.Server.3/com.intorno.git"
-  },
   "author": "",
   "license": "ISC"
 }
