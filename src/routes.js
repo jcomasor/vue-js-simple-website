@@ -33,8 +33,8 @@ var events = require('./global/utilities/events')
 //
 
 var router
-var animationOutDuration
-var animationInDuration
+var transitionInDuration
+var transitionOutDuration
 
 //
 //  END VARIABLES
@@ -58,11 +58,11 @@ Vue.transition('transition', {
               
         setTimeout( function () {
             
-            events.emit(events.events.animationIn)
+            events.emit(events.events.transitionIn)
             
-            setTimeout( function () { $('body').css({ 'pointer-events' : 'auto' }) }, animationInDuration)
+            setTimeout( function () { $('body').css({ 'pointer-events' : 'auto' }) }, transitionInDuration)
             
-        }, animationOutDuration)    
+        }, transitionOutDuration)    
   
     },
   
@@ -70,9 +70,9 @@ Vue.transition('transition', {
         
         $('body').css({ 'pointer-events' : 'none' })
 
-        events.emit(events.events.animationOut)
+        events.emit(events.events.transitionOut)
         
-        setTimeout( function () { done() }, animationOutDuration)
+        setTimeout( function () { done() }, transitionOutDuration)
   
     }
 
@@ -89,7 +89,7 @@ Vue.transition('transition', {
 module.exports = {
 
     getRouter : function () { return router },
-    setAnimationOutDuration : function (time) { animationOutDuration = time },
-    setAnimationInDuration : function (time) { animationInDuration = time }
+    setTransitionOutDuration : function (time) { transitionOutDuration = time },
+    setTransitionInDuration : function (time) { transitionInDuration = time }
 
 }

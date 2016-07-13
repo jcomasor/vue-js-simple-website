@@ -30,8 +30,8 @@ var emitter = new Emitter();
 
 emitter.events = {
     
-    "animationIn" : "animationIn",
-    "animationOut" : "animationOut",
+    "transitionIn" : "transitionIn",
+    "transitionOut" : "transitionOut",
     
 }
 
@@ -39,13 +39,13 @@ emitter.events = {
 // DEPENDENCES
 //
 
-// # animationIn, animationOut:
+// # transitionIn, transitionOut:
 //      - Emit : 
-//          · js/events.js
+//          · src/global/utilities/events.js
 //      - Listeners:
-//          · js/components/home.js
-//          · js/components/about.js
-//          · js/components/contact.js
+//          · src/home/component.js
+//          · src/about/component.js
+//          · src/contact/component.js
 //
 
 //

@@ -67,24 +67,24 @@ var component = Vue.extend({
     
     ready: function () {
         
-        events.on(events.events.animationIn, this.animationIn)
-        events.on(events.events.animationOut, this.animationOut)
+        events.on(events.events.transitionIn, this.transitionIn)
+        events.on(events.events.transitionOut, this.transitionOut)
         
     },
     
     methods : {
         
-        animationIn : function (e) {
+        transitionIn : function (e) {
             
-            r.setAnimationInDuration(500)
+            r.setTransitionInDuration(500)
             TweenMax.to(this.el, 0.5, { opacity : 1 })
             TweenMax.from(this.el, 0.5, { y : 100 })
             
         },
         
-        animationOut : function (e) {
+        transitionOut : function (e) {
                      
-            r.setAnimationOutDuration(500)
+            r.setTransitionOutDuration(500)
             TweenMax.to(this.el, 0.5, { y : 100, opacity: 0 })
             
         }
@@ -93,8 +93,8 @@ var component = Vue.extend({
     
     destroyed : function () {
         
-        events.removeListener(events.events.animationIn, this.animationIn)
-        events.removeListener(events.events.animationOut, this.animationOut)
+        events.removeListener(events.events.transitionIn, this.transitionIn)
+        events.removeListener(events.events.transitionOut, this.transitionOut)
         
     }
     
