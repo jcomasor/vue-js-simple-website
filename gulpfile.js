@@ -8,9 +8,6 @@
 // hello@christian-macmillan.com
 //
 
-//
-// REQUIRES
-//
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-ruby-sass'),
@@ -28,10 +25,6 @@ var gulp = require('gulp'),
     vueify = require('vueify'),
     concat = require('gulp-concat');
 
-//
-// AUX TASKS
-//
- 
 // All SASS' and CSS's files to one main minify css
 //
 gulp.task('styles', function () {
@@ -40,14 +33,14 @@ gulp.task('styles', function () {
         .pipe(concat('style.css'))
         .on('error', sass.logError)
         .pipe(gulp.dest('build'))
-        .pipe(reload({ stream:true }));
+        .pipe(reload({ stream:true }))
 
-});
+})
 
 // All JS's files to one main dev file
 //
 gulp.task('browserify', function() {
-    
+
     var bundleStream = browserify('./src/main.js')
         .transform(vueify)
         .transform(stringify, {
@@ -55,48 +48,32 @@ gulp.task('browserify', function() {
             minify: true
         })
         .bundle().on('error', function (err) {
-            console.log(err.toString());
-            this.emit("end");
+            console.log(err.toString())
+            this.emit("end")
         });
 
     bundleStream
         .pipe(source('main.js'))
         .pipe(rename('bundle.js'))
         .pipe(gulp.dest('./build'))
-        .pipe(reload({ stream:true }));
-    
+        .pipe(reload({ stream:true }))
+
 })
 
-
-// Create the server connection and add the watches 
+// Create the server connection and add the watches
 //
 gulp.task('connect-sync', function() {
-    
+
     connect.server({}, function (){
         browserSync({
             proxy: '127.0.0.1:8000',
             port: 3000
-        });
-    });
+        })
+    })
 
-    gulp.watch(['**/*.php','**/*.html','src/**/*.js'], ['browserify']);
-    gulp.watch(['css/**/*.scss','src/**/*.scss'], ['styles']);
+    gulp.watch(['**/*.php','**/*.html','src/**/*.js'], ['browserify'])
+    gulp.watch(['css/**/*.scss','src/**/*.scss'], ['styles'])
 
-});
+})
 
-//
-//  END - AUX TASKS
-//
-
-//
-// GENERAL EXE TASKS
-//
-
-gulp.task('default', [ 'browserify' , 'connect-sync' ]);
-
-//
-// END - GENERAL EXE TASKS
-//
-
-//
-// END - gulpfile.js 
+gulp.task('default', [ 'browserify' , 'connect-sync' ])

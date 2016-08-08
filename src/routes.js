@@ -1,5 +1,5 @@
 //
-// JS MODULE: routes.js
+// routes.js
 
 //
 // AUTHOR
@@ -9,82 +9,49 @@
 // hello@christian-macmillan.com
 //
 
-//
-//  REQUIRES
-//
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-//
-//  Vue js
+import emitter from '../local_modules/events'
 
-var Vue = require('vue')
-var VueRouter = require('vue-router')
-
-//
-//  Aux js
-
-var events = require('./global/utilities/events')
-
-//
-// END REQUIRES
-//
-
-//
-// VARIABLES
-//
-
-var router
-var transitionInDuration
-var transitionOutDuration
-
-//
-//  END VARIABLES
-//
-
-//
-// JS
-//
+let transitionInDuration
+let transitionOutDuration
+let router
+let body = document.getElementsByTagName("body")[0]
 
 Vue.use(VueRouter)
 
-router = new VueRouter({    
+router = new VueRouter({
     hashbang: false,
-    history: true,
+    history: false,
     transitionOnLoad: true
 })
 
 Vue.transition('transition', {
-  
-    enter: function (el,done) {
-              
-        setTimeout( function () {
-            
-            events.emit(events.events.transitionIn)
-            
-            setTimeout( function () { $('body').css({ 'pointer-events' : 'auto' }) }, transitionInDuration)
-            
-        }, transitionOutDuration)    
-  
-    },
-  
-    leave: function (el,done) {
-        
-        $('body').css({ 'pointer-events' : 'none' })
 
-        events.emit(events.events.transitionOut)
-        
+    enter: function (el,done) {
+
+        setTimeout( function () {
+
+            emitter.emit(emitter.events.transitionIn)
+
+            setTimeout( function () { TweenMax.set(body, { pointerEvents : 'auto' }) }, transitionInDuration)
+
+        }, transitionOutDuration)
+
+    },
+
+    leave: function (el,done) {
+
+        TweenMax.set(body, { pointerEvents : 'none' })
+
+        emitter.emit(emitter.events.transitionOut)
+
         setTimeout( function () { done() }, transitionOutDuration)
-  
+
     }
 
 })
-
-//
-//  END JS
-//
-
-//
-//  EXPORTS
-//
 
 module.exports = {
 

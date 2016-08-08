@@ -1,52 +1,52 @@
 
 //
-// _header.scss
+// _style.scss
 //
 
 header {
 
     .menu {
-        
-        width: 100%; 
-        
+
+        width: 100%;
+
         .navigation {
-            
+
             margin-top: 55px;
-            
+
             ul {
-                
+
                 width: 818px;
                 padding: 0px;
                 list-style: none;
                 white-space: nowrap;
-                
-                li { 
-                    
+
+                li {
+
                     display: inline;
                     padding: 0px;
                     margin: 0px 30px 0px 0px;
-                    
+
                     a {
-                        
+
                         color: black;
                         font-family: $font-family;
                         font-size: 16px;
                         line-height: 25px;
-                        
+
                         &:hover, :focus, :active {
-                            
+
                             color: black;
-                            
+
                         }
-                        
+
                     }
-                    
+
                 }
-                
+
             }
-            
+
         }
-        
+
     }
-    
+
 }

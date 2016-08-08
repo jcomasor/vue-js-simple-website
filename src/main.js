@@ -9,70 +9,34 @@
 // hello@christian-macmillan.com
 //
 
+//  Libraries
 //
-//  REQUIRES
+import { TweenMax } from 'gsap'
+
+// Vue
 //
+import Vue from 'vue'
+import routes from './routes'
 
+// Vue components
 //
-//  Global Libraries
+import header from './global/header/component'
+import home from './home/component'
+import about from './about/component'
+import contact from './contact/component'
 
-global.$ = require('jquery')
-var TweenMax = require('gsap')
-
+// Run Vue App
 //
-//  Vue js
+const App = Vue.extend({
 
-var Vue = require('vue')
-var r= require('./routes')
-
-//
-//  Vue js components
-
-var header = require('./global/header/component')
-var home = require('./home/component')
-var about = require('./about/component')
-var contact = require('./contact/component')
-
-//
-//  Aux js 
-
-var responsive = require('./global/utilities/responsive')
-var events = require('./global/utilities/events')
-
-//
-// END REQUIRES
-//
-
-//
-// VARIABLES
-//
-
-var App = Vue.extend({
-    
     components : {
-        
+
         'header-component' : header
-        
+
     }
-    
+
 })
 
-var router = r.getRouter()
-
-//
-//  END VARIABLES
-//
-
-//
-// JS
-//
+const router = routes.getRouter()
 
 router.start(App, '#app')
-
-//
-//  END JS
-//
-
-//
-//  EXPORTS
-//

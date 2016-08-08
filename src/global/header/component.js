@@ -1,5 +1,5 @@
 //
-// JS MODULE : header.js
+// component.js
 
 //
 // AUTHOR
@@ -9,53 +9,10 @@
 // hello@christian-macmillan.com
 //
 
-//
-//  REQUIRES
-//
+import Vue from 'vue'
 
-//
-//  Vue js
+export default Vue.extend({
 
-var Vue = require('vue')
+    template : require("./template.html"),
 
-//
-//  Aux js
-
-var events = require('../utilities/events')
-
-//
-//  END REQUIRES
-//
-
-//
-// VARIABLES
-//
-
-//
-//  END VARIABLES
-//
-
-//
-// JS
-//
-
-// Component Template
-//
-var template = require("./template.html") 
-
-// Component Object
-//
-var header = Vue.extend({
-    
-    template : template,
-    
 })
-
-//
-// END JS
-//
-
-//
-// EXPORTS
-//
-module.exports = header

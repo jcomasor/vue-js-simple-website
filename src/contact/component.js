@@ -9,111 +9,60 @@
 // hello@christian-macmillan.com
 //
 
-//
-//  REQUIRES
-//
+import Vue from 'vue'
 
-//
-//  Vue js
+import routes from '../routes'
+import emitter from '../../local_modules/events'
 
-var Vue = require('vue')
+const component = Vue.extend({
 
-//
-// Aux js
+    template : require('./template.html'),
 
-var r = require('../routes')
-var events = require('../global/utilities/events')
+    props : {},
 
-//
-// END REQUIRES
-//
+    data() { return {} },
 
-//
-// VARIABLES
-//
+    ready() {
 
-var router
-var data = {}
+        emitter.on(emitter.events.transitionIn, this.transitionIn)
+        emitter.on(emitter.events.transitionOut, this.transitionOut)
 
-//
-//  END VARIABLES
-//
-
-//
-// JS
-//
-
-// 
-// Component Template
-
-var template = require('./template.html') 
-
-// 
-// Vue Component
-
-var component = Vue.extend({
-    
-    template : template,
-    
-    props : {
-        
-        el : {}
-        
     },
-    
-    data : function () { return data },
-    
-    compiled : function () { this.el = $(this.$el) },
-    
-    ready: function () {
-        
-        events.on(events.events.transitionIn, this.transitionIn)
-        events.on(events.events.transitionOut, this.transitionOut)
-        
-    },
-    
+
     methods : {
-        
-        transitionIn : function (e) {
-            
-            r.setTransitionInDuration(500)
-            TweenMax.to(this.el, 0.5, { opacity : 1 })
-            TweenMax.from(this.el, 0.5, { y : 100 })
-            
+
+        transitionIn() {
+
+            routes.setTransitionInDuration(500)
+            TweenMax.to(this.$el, 0.5, { opacity : 1 })
+            TweenMax.from(this.$el, 0.5, { y : 100 })
+            TweenMax.from(this.$els.txt, 0.5, { scale : 0.25, rotation: 360 })
+
         },
-        
-        transitionOut : function (e) {
-                     
-            r.setTransitionOutDuration(5000)
-            TweenMax.to(this.el, 5, { y : 100, left : 500, opacity: 0, scale: 0.4 })
-            TweenMax.to(this.el.find('p'), 0.5, { rotation : 360, repeat : 10, ease: Power0.easeNone })
-            
+
+        transitionOut() {
+
+            routes.setTransitionOutDuration(500)
+            TweenMax.to(this.$el, 0.5, { y : 100, opacity: 0 })
+
         }
-        
-    }, 
-    
-    destroyed : function () {
-        
-        events.removeListener(events.events.transitionIn, this.transitionIn)
-        events.removeListener(events.events.transitionOut, this.transitionOut)
-        
+
+    },
+
+    destroyed() {
+
+        emitter.removeListener(emitter.events.transitionIn, this.transitionIn)
+        emitter.removeListener(emitter.events.transitionOut, this.transitionOut)
+
     }
-    
+
 })
 
-//  Component Route
-//
-router = r.getRouter()
+routes.getRouter().map({
 
-router.map({
-    
     '/contact/': {
         component : component,
         name : 'contact'
     }
 
 })
-
-//
-//  END JS
-//

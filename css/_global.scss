@@ -9,39 +9,37 @@ body, html {
     padding: 0px;
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 
 #app {
-    
+
     width: 100%;
     height: 100%;
-     
+
 }
 
 p { margin : 0; }
 
 a {
-    
+
     outline: 0 !important;
     text-decoration: none;
-    
+
     &:hover, :active, :visited, :link {
-        
+
         outline: 0 !important;
         text-decoration: none;
 
-        
+
     }
-    
+
 }
 
 .seo {
-    
+
     display: none;
-    
+
 }
