@@ -20,10 +20,10 @@ emitter.events = {
 
 }
 
-module.exports = emitter
+export default emitter
 
 //
-// Relationships
+// Relationships 
 //
 
 //
