@@ -76,4 +76,4 @@ gulp.task('connect-sync', function() {
 
 })
 
-gulp.task('default', [ 'browserify' , 'connect-sync' ])
+gulp.task('default', [ 'browserify' , 'connect-sync', 'styles' ])
