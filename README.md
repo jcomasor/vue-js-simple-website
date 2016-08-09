@@ -1,6 +1,6 @@
 # Vue js simple website
 
-Vue js basic website with routes and transitions
+Vue js simple website with routes and transitions
 
 ### Technologies
 
