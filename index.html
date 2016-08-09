@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="app">
 
     <head>
 
@@ -68,13 +68,7 @@
 
     <body>
 
-        <div id="app">
-
-            <header-component></header-component>
-
-            <router-view transition="transition"></router-view>
-
-        </div>
+        <router-view v-ref:main></router-view>
 
         <!-- Own JS  -->
         <script src="./build/bundle.js"></script>

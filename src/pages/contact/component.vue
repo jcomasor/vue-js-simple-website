@@ -1,5 +1,5 @@
 //
-// component.js
+// component.vue
 
 //
 // AUTHOR
@@ -9,18 +9,23 @@
 // hello@christian-macmillan.com
 //
 
+<template>
+
+    <div class="page contact">
+
+        <p v-el:txt>Contact</p>
+
+    </div>
+
+</template>
+
+<script>
+
 import Vue from 'vue'
+import transition from '../../config/transitions'
+import emitter from '../../../local_modules/events'
 
-import routes from '../routes'
-import emitter from '../../local_modules/events'
-
-const component = Vue.extend({
-
-    template : require('./template.html'),
-
-    props : {},
-
-    data() { return {} },
+export default Vue.extend({
 
     ready() {
 
@@ -33,15 +38,16 @@ const component = Vue.extend({
 
         transitionIn() {
 
-            routes.setTransitionInDuration(500)
+            transition.setTransitionInDuration(500)
             TweenMax.to(this.$el, 0.5, { opacity : 1 })
             TweenMax.from(this.$el, 0.5, { y : 100 })
+            TweenMax.from(this.$els.txt, 0.5, { scale : 0.25, rotation: 360 })
 
         },
 
         transitionOut() {
 
-            routes.setTransitionOutDuration(500)
+            transition.setTransitionOutDuration(500)
             TweenMax.to(this.$el, 0.5, { y : 100, opacity: 0 })
 
         }
@@ -57,11 +63,4 @@ const component = Vue.extend({
 
 })
 
-routes.getRouter().map({
-
-    '/about/': {
-        component : component,
-        name : 'about'
-    }
-
-})
+</script>

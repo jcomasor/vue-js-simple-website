@@ -16,27 +16,20 @@ import { TweenMax } from 'gsap'
 // Vue
 //
 import Vue from 'vue'
-import routes from './routes'
+import VueRouter from 'vue-router'
+import transitions from './config/transitions'
+import routes from './config/routes'
 
-// Vue components
-//
-import header from './global/header/component'
-import home from './home/component'
-import about from './about/component'
-import contact from './contact/component'
+Vue.use(VueRouter)
+
+let router = new VueRouter({
+    hashbang: false,
+    history: false,
+    transitionOnLoad: true
+})
 
 // Run Vue App
 //
-const App = Vue.extend({
-
-    components : {
-
-        'header-component' : header
-
-    }
-
-})
-
-const router = routes.getRouter()
-
+const App = Vue.extend()
+router.map(routes)
 router.start(App, '#app')

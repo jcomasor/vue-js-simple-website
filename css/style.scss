@@ -1,3 +1,4 @@
+//
 // style.scss
 
 //
@@ -22,10 +23,9 @@
 @import "normalize";
 @import "transition";
 @import "global";
-@import "loader";
 
-@import "../src/global/header/style";
+@import "../src/common/header/style";
 
-@import "../src/home/style";
-@import "../src/about/style";
-@import "../src/contact/style";
+@import "../src/pages/home/style";
+@import "../src/pages/about/style";
+@import "../src/pages/contact/style";

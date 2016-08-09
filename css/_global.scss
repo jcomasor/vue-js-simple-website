@@ -1,7 +1,5 @@
-
 //
 // _global.scss
-//
 
 body, html {
     font-family: $font-family;
@@ -11,14 +9,6 @@ body, html {
     height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-
-#app {
-
-    width: 100%;
-    height: 100%;
-
 }
 
 p { margin : 0; }

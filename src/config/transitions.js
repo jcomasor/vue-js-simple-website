@@ -1,5 +1,5 @@
 //
-// routes.js
+// transitions.js
 
 //
 // AUTHOR
@@ -10,22 +10,11 @@
 //
 
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-
-import emitter from '../local_modules/events'
+import emitter from '../../local_modules/events'
 
 let transitionInDuration
 let transitionOutDuration
-let router
 let body = document.getElementsByTagName("body")[0]
-
-Vue.use(VueRouter)
-
-router = new VueRouter({
-    hashbang: false,
-    history: false,
-    transitionOnLoad: true
-})
 
 Vue.transition('transition', {
 
@@ -53,9 +42,8 @@ Vue.transition('transition', {
 
 })
 
-module.exports = {
+export default {
 
-    getRouter : function () { return router },
     setTransitionOutDuration : function (time) { transitionOutDuration = time },
     setTransitionInDuration : function (time) { transitionInDuration = time }
 

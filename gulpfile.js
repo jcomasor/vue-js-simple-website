@@ -71,7 +71,7 @@ gulp.task('connect-sync', function() {
         })
     })
 
-    gulp.watch(['**/*.php','**/*.html','src/**/*.js'], ['browserify'])
+    gulp.watch(['**/*.php','**/*.html','src/**/*.js','src/**/*.vue'], ['browserify'])
     gulp.watch(['css/**/*.scss','src/**/*.scss'], ['styles'])
 
 })

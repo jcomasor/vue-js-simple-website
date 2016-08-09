@@ -1,16 +1,14 @@
-
 //
 // _keyframes.scss
-//
 
 /* Chrome, Safari, Opera */ 
 @-webkit-keyframes scrollMove {
     0% { top: 10px;}
     50% { top: 16px; height: 0px; }
     100% { top: 10px; height: 0px; }
-} 
+}
 
-/* Standard syntax */ 
+/* Standard syntax */
 @keyframes scrollMove {
     0% { top: 10px;}
     50% { top: 16px; height: 0px; }

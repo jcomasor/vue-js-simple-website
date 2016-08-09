@@ -1,5 +1,5 @@
 //
-// JS MODULE : searchEvents.js
+// events.js
 
 //
 // AUTHOR
@@ -23,7 +23,7 @@ emitter.events = {
 export default emitter
 
 //
-// Relationships 
+// Relationships
 //
 
 //
