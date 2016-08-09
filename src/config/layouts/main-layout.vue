@@ -25,12 +25,6 @@ import header from '../../common/header/component.vue'
 
 export default Vue.extend({
 
-    ready() {
-
-        console.log('Hola q ase')
-
-    },
-
     components: {
         'header-component': header
     }
