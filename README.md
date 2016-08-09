@@ -1,6 +1,17 @@
-# Vue js simple website 
+# Vue js simple website
 
-Vue js + Gulp basic website with routes and transitions
+Vue js basic website with routes and transitions
+
+### Technologies
+
+* Vue.js
+* EventEmitter.js
+* GSAP
+* Babel | ES2015
+* Gulp
+* Browserify
+* Browsersync
+* SCSS
 
 ### Usage
 
