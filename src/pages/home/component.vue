@@ -29,7 +29,6 @@ export default Vue.extend({
 
     ready() {
 
-        console.log('hola')
         emitter.on(emitter.events.transitionIn, this.transitionIn)
         emitter.on(emitter.events.transitionOut, this.transitionOut)
 
