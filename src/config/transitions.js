@@ -18,25 +18,25 @@ let body = document.getElementsByTagName("body")[0]
 
 Vue.transition('transition', {
 
-    enter: function (el,done) {
+    enter(el,done) {
 
-        setTimeout( function () {
+        setTimeout(()=>{
 
             emitter.emit(emitter.events.transitionIn)
 
-            setTimeout( function () { TweenMax.set(body, { pointerEvents : 'auto' }) }, transitionInDuration)
+            setTimeout(()=>{ TweenMax.set(body, { pointerEvents : 'auto' }) }, transitionInDuration)
 
         }, transitionOutDuration)
 
     },
 
-    leave: function (el,done) {
+    leave(el,done) {
 
         TweenMax.set(body, { pointerEvents : 'none' })
 
         emitter.emit(emitter.events.transitionOut)
 
-        setTimeout( function () { done() }, transitionOutDuration)
+        setTimeout(()=>{ done() }, transitionOutDuration)
 
     }
 
@@ -44,7 +44,7 @@ Vue.transition('transition', {
 
 export default {
 
-    setTransitionOutDuration : function (time) { transitionOutDuration = time },
-    setTransitionInDuration : function (time) { transitionInDuration = time }
+    setTransitionOutDuration(time) { transitionOutDuration = time },
+    setTransitionInDuration(time) { transitionInDuration = time }
 
 }

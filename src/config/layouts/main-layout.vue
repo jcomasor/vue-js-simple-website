@@ -21,12 +21,12 @@
 <script>
 
 import Vue from 'vue'
-import header from '../../common/header/component.vue'
+import headerComponent from '../../common/header/component.vue'
 
 export default Vue.extend({
 
     components: {
-        'header-component': header
+        headerComponent
     }
 
 })
