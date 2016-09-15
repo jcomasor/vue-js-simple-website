@@ -26,7 +26,7 @@ import store from '../../config/api/website'
 import transition from '../../config/transitions'
 import emitter from '../../../local_modules/events'
 
-export default Vue.extend({
+export default {
 
     data() {
         return {
@@ -80,6 +80,6 @@ export default Vue.extend({
 
     }
 
-})
+}
 
 </script>
