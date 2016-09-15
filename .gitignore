@@ -1,5 +1,5 @@
 .idea/
-.DS_Store
+.DS_api
 .sass-cache
 node_modules
 build/style.css

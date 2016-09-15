@@ -32,4 +32,4 @@ let router = new VueRouter({
 //
 const App = Vue.extend()
 router.map(routes)
-router.start(App, '#app')
+router.start(App, '#app') 

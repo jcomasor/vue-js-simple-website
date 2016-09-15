@@ -16,7 +16,7 @@ const emitter = new EventEmitter()
 emitter.events = {
 
     "transitionIn" : "transitionIn",
-    "transitionOut" : "transitionOut",
+    "transitionOut" : "transitionOut", 
 
 }
 

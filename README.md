@@ -17,3 +17,7 @@ Vue js simple website with routes and transitions
 
 `npm install` +
 `gulp`
+
+### Production
+
+`gulp prod`

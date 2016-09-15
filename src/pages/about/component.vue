@@ -22,7 +22,7 @@
 <script>
 
 import Vue from 'vue'
-import store from '../../config/api/website'
+import api from '../../config/api/website'
 import transition from '../../config/transitions'
 import emitter from '../../../local_modules/events'
 
@@ -37,7 +37,7 @@ export default {
     route:{
         data(transition){
             return Promise.all([
-                    store.getAbout()
+                    api.getAbout()
                 ]).then(([data]) => {
                     return {
                         data : data

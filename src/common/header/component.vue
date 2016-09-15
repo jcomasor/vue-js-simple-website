@@ -13,7 +13,7 @@
 
     <header>
 
-        <section class="menu">
+        <section class="menu"> 
 
             <div class="navigation">
 

@@ -17,7 +17,7 @@ import homeData from './home-data'
 import aboutData from './about-data'
 import contactData from './contact-data'
 
-export default {
+export default { 
 
     getHome() {
         // Ajax simulation

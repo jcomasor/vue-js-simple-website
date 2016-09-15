@@ -25,8 +25,7 @@ var gulp = require('gulp'),
     vueify = require('vueify'),
     concat = require('gulp-concat');
 
-// All SASS' and CSS's files to one main minify css
-//
+
 gulp.task('styles', function () {
 
     return sass(['css/*.scss'], { style: 'compressed' })
@@ -37,8 +36,6 @@ gulp.task('styles', function () {
 
 })
 
-// All JS's files to one main dev file
-//
 gulp.task('browserify', function() {
 
     var bundleStream = browserify('./src/main.js')
@@ -60,8 +57,12 @@ gulp.task('browserify', function() {
 
 })
 
-// Create the server connection and add the watches
-//
+gulp.task('prod', function() {
+    gulp.src('build/bundle.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('build'))
+})
+
 gulp.task('connect-sync', function() {
 
     connect.server({}, function (){
