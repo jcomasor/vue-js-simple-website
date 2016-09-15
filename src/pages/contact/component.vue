@@ -13,7 +13,7 @@
 
     <div class="page contact">
 
-        <p v-el:txt>Contact</p>
+        <p class="txt">{{ data.title }}</p>
 
     </div>
 
@@ -22,10 +22,30 @@
 <script>
 
 import Vue from 'vue'
+import store from '../../config/api/website'
 import transition from '../../config/transitions'
 import emitter from '../../../local_modules/events'
 
 export default Vue.extend({
+
+    data() {
+        return {
+            data : Object
+        }
+    },
+
+    route:{
+        data(transition){
+            return Promise.all([
+                    store.getContact()
+                ]).then(([data]) => {
+                    return {
+                        data : data
+                    }
+                })
+        },
+        waitForData:true
+    },
 
     ready() {
 
@@ -41,7 +61,7 @@ export default Vue.extend({
             transition.setTransitionInDuration(500)
             TweenMax.to(this.$el, 0.5, { opacity : 1 })
             TweenMax.from(this.$el, 0.5, { y : 100 })
-            TweenMax.from(this.$els.txt, 0.5, { scale : 0.25, rotation: 360 })
+            TweenMax.from(this.$el.querySelector('.txt'), 0.5, { scale : 0.25, rotation: 360 })
 
         },
 

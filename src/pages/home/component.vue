@@ -13,7 +13,7 @@
 
     <div class="page home">
 
-        <p>Home</p>
+        <p>{{ data.title }}</p>
 
     </div>
 
@@ -22,10 +22,30 @@
 <script>
 
 import Vue from 'vue'
+import store from '../../config/api/website'
 import transition from '../../config/transitions'
 import emitter from '../../../local_modules/events'
 
 export default Vue.extend({
+
+    data() {
+        return {
+            data : Object
+        }
+    },
+
+    route:{
+        data(transition){
+            return Promise.all([
+                    store.getHome()
+                ]).then(([data]) => {
+                    return {
+                        data : data
+                    }
+                })
+        },
+        waitForData:true
+    },
 
     ready() {
 
